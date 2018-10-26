@@ -14,7 +14,7 @@ p {
 }
 
 a {
-  color: #C79968;
+  color: #386697;
 }
 
 a:hover {
@@ -22,7 +22,7 @@ a:hover {
 }
 
 .text-primary {
-  color: #C79968 !important;
+  color: #386697 !important;
 }
 
 h1,
@@ -71,8 +71,8 @@ section h3.section-subheading {
 }
 
 .btn-primary {
-  background-color: #C79968;
-  border-color: #C79968;
+  background-color: #386697;
+  border-color: #386697;
 }
 
 .btn-primary:active, .btn-primary:focus, .btn-primary:hover {
@@ -87,12 +87,12 @@ section h3.section-subheading {
 }
 
 ::-moz-selection {
-  background: #C79968;
+  background: #386697;
   text-shadow: none;
 }
 
 ::selection {
-  background: #C79968;
+  background: #386697;
   text-shadow: none;
 }
 
@@ -119,12 +119,12 @@ img::-moz-selection {
   text-transform: uppercase;
   color: white;
   border: 0;
-  background-color: #C79968;
+  background-color: #386697;
   font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
 #mainNav .navbar-brand {
-  color: #C79968;
+  color: #386697;
   font-family: 'Kaushan Script', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
@@ -142,7 +142,7 @@ img::-moz-selection {
 }
 
 #mainNav .navbar-nav .nav-item .nav-link.active, #mainNav .navbar-nav .nav-item .nav-link:hover {
-  color: #C79968;
+  color: #386697;
 }
 
 @media (min-width: 992px) {
@@ -452,7 +452,7 @@ header.masthead .intro-text .intro-heading {
   color: white;
   border: 7px solid #e9ecef;
   border-radius: 100%;
-  background-color: #C79968;
+  background-color: #386697;
 }
 
 .timeline > li .timeline-image h4 {
@@ -594,59 +594,59 @@ header.masthead .intro-text .intro-heading {
   margin-top: 0;
 }
 
-section#contact {
+section#group {
   background-color: #212529;
   background-image: url("../img/map-image.png");
   background-repeat: no-repeat;
   background-position: center;
 }
 
-section#contact .section-heading {
+section#group .section-heading {
   color: #fff;
 }
 
-section#contact .form-group {
+section#group .form-group {
   margin-bottom: 25px;
 }
 
-section#contact .form-group input,
-section#contact .form-group textarea {
+section#group .form-group input,
+section#group .form-group textarea {
   padding: 20px;
 }
 
-section#contact .form-group input.form-control {
+section#group .form-group input.form-control {
   height: auto;
 }
 
-section#contact .form-group textarea.form-control {
+section#group .form-group textarea.form-control {
   height: 248px;
 }
 
-section#contact .form-control:focus {
-  border-color: #C79968;
+section#group .form-control:focus {
+  border-color: #386697;
   -webkit-box-shadow: none;
   box-shadow: none;
 }
 
-section#contact ::-webkit-input-placeholder {
+section#group ::-webkit-input-placeholder {
   font-weight: 700;
   color: #ced4da;
   font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
-section#contact :-moz-placeholder {
+section#group :-moz-placeholder {
   font-weight: 700;
   color: #ced4da;
   font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
-section#contact ::-moz-placeholder {
+section#group ::-moz-placeholder {
   font-weight: 700;
   color: #ced4da;
   font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
-section#contact :-ms-input-placeholder {
+section#group :-ms-input-placeholder {
   font-weight: 700;
   color: #ced4da;
   font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -691,5 +691,5 @@ ul.social-buttons li a {
 }
 
 ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons li a:hover {
-  background-color: #C79968;
+  background-color: #386697;
 }

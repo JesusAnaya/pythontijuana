@@ -1,0 +1,49 @@
+<div class="col-12">
+  <div class="row justify-content-center">
+    <div class="col-sm-12">
+      <div class="title">{{ next_event.title }}</div>
+    </div>
+
+    <div class="col-sm-4">
+        <div class="event-data-box">
+            <i class="fas fa-calendar-alt"></i>
+            <div class="content">
+                <h5 class="box_title">
+                    Fecha
+                </h5>
+                <p>
+                    {{ next_event.start_datetime|date:"d F Y" }}
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-4">
+        <div class="event-data-box">
+            <i class="fas fa-map-marker-alt"></i>
+            <div class="content">
+                <h5 class="box_title">
+                    Lugar
+                </h5>
+                <p>
+                    <a href="{{ next_event.venue_map_url }}" target="_blank">{{ next_event.venue_name }}</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-4">
+        <div class="event-data-box">
+            <i class="fas fa-ticket-alt"></i>
+            <div class="content">
+                <h5 class="box_title">
+                    Registro
+                </h5>
+                <p>
+                    <a href="">Click aquí</a>
+                </p>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
