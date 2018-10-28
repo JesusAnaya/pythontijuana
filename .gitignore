@@ -106,3 +106,4 @@ venv.bak/
 *.sublime-*
 
 developer_settings.py
+deployment_settings.py
