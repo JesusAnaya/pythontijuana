@@ -107,3 +107,4 @@ venv.bak/
 
 developer_settings.py
 deployment_settings.py
+/deploy

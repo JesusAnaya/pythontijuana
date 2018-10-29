@@ -1,3 +1,15 @@
+a {
+  color: #5e5e5e;
+}
+
+a:hover {
+  color: #386697;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
 .logo {
     display: block;
     width: 150px;
