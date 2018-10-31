@@ -108,3 +108,5 @@ venv.bak/
 developer_settings.py
 deployment_settings.py
 /deploy
+/static_root
+/media_root

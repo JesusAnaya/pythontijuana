@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+{% load static home_tags %}
+
+{% block title %}{% block og_title %}El Blog de Python Tijuana{% endblock %}{% endblock %}
+
+
+{% block navigation %}
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+  <div class="container">
+    <a href="#page-top"><span class="logo"></span></a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav text-uppercase ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'blog' %}">Posts</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+{% endblock %}
+
+{% block content %}
+<section class="blog-welcome bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading blog-page-title">El Blog de Python Tijuana</h2>
+        <h3 class="section-subheading text-muted blog-page-subtitle">La comunidad de pythonistas en Tijuana, México.</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- blog posts -->
+<section class="blog-posts">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <article class="post-preview">
+          <div class="row">
+            <div class="hero-image col-3">
+              <a href="">
+                <img class="hero-image" src="http://placehold.it/160x142" alt="">
+              </a>
+            </div>
+            <div class="post-content col-md-9 col-s-12">
+              <a href="">
+                <h2 class="post-title">
+                  Science has not yet mastered prophecy
+                </h2>
+                <h3 class="post-subtitle">
+                  We predict too much for the next year and yet far too little for the next ten.
+                </h3>
+              </a>
+              <p class="post-meta">Posted by
+                <a href="#">Start Bootstrap</a>
+                on August 24, 2018
+              </p>
+            </div>
+          </div>
+        </article>
+        <hr/>
+
+        <article class="post-preview">
+          <div class="row">
+
+            <div class="post-content col-md-12">
+              <a href="">
+                <h2 class="post-title">
+                  Science has not yet mastered prophecy
+                </h2>
+                <h3 class="post-subtitle">
+                  We predict too much for the next year and yet far too little for the next ten.
+                </h3>
+              </a>
+              <p class="post-meta">Posted by
+                <a href="#">Start Bootstrap</a>
+                on August 24, 2018
+              </p>
+            </div>
+          </div>
+        </article>
+        <hr/>
+
+        <article class="post-preview">
+          <div class="row">
+            <div class="hero-image col-3">
+              <a href="">
+                <img class="hero-image" src="http://placehold.it/160x142" alt="">
+              </a>
+            </div>
+            <div class="post-content col-md-9 col-s-12">
+              <a href="">
+                <h2 class="post-title">
+                  Science has not yet mastered prophecy
+                </h2>
+                <h3 class="post-subtitle">
+                  We predict too much for the next year and yet far too little for the next ten.
+                </h3>
+              </a>
+              <p class="post-meta">Posted by
+                <a href="#">Start Bootstrap</a>
+                on August 24, 2018
+              </p>
+            </div>
+          </div>
+        </article>
+        <hr/>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+{% endblock %}
