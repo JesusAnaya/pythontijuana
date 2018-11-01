@@ -126,9 +126,6 @@ MEDIA_URL = '/media/'
 
 STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
 
-# Show summernote with Bootstrap4
-SUMMERNOTE_THEME = 'bs4'
-
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,

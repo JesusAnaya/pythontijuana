@@ -1,4 +1,4 @@
-{% load static compress %}
+{% load static compress helper_tags %}
 
 <!DOCTYPE html>
 <html lang="es">
@@ -80,6 +80,7 @@
       </div>
     </footer>
 
+    {% compress js %}
     <!-- Bootstrap core JavaScript -->
     <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
     <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
@@ -89,6 +90,18 @@
 
     <!-- Custom scripts for this template -->
     <script src="{% static 'js/agency.min.js' %}"></script>
+    {% endcompress %}
 
+    {% if not debug %}
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id={% google_analytics_id %}"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', '{% google_analytics_id %}');
+      </script>
+    {% endif %}
   </body>
 </html>

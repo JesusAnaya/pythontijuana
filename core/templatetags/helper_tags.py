@@ -1,4 +1,6 @@
 from django import template
+from django.conf import settings
+from django.utils.safestring import mark_safe
 
 register = template.Library()
 
@@ -7,3 +9,8 @@ register = template.Library()
 def full_uri(context, path):
     request = context['request']
     return request.build_absolute_uri(path)
+
+
+@register.simple_tag
+def google_analytics_id():
+    return getattr(settings, 'GOOGLE_ANALYTICS_ID', None)
