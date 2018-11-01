@@ -23,6 +23,9 @@ DATABASES = {
 STATIC_ROOT = os.path.join(BASE_DIR, "static_root")
 MEDIA_ROOT = os.path.join(BASE_DIR, "media_root")
 
+META_SITE_PROTOCOL = 'https'
+META_SITE_DOMAIN = 'domain.com'
+
 DISQUS_API_KEY = 'FOOBARFOOBARFOOBARFOOBARFOOBARF'
 DISQUS_WEBSITE_SHORTNAME = 'pythontijuana'
 SITE_ID = 1
