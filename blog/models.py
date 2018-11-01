@@ -1,9 +1,12 @@
 from django.db import models
 from django.conf import settings
 from django.utils import timezone
+from django.utils.html import strip_tags
+from django.utils.text import Truncator
 from django.db.models.signals import pre_save
 from django.dispatch import receiver
 from django.template.defaultfilters import slugify
+
 from sorl.thumbnail import ImageField
 from django.urls import reverse
 
@@ -22,6 +25,24 @@ class BlogPost(models.Model):
     created_at = models.DateTimeField(blank=True, auto_now_add=True)
     updated_at = models.DateTimeField(blank=True, auto_now=True)
     published_at = models.DateTimeField(blank=True, null=True)
+
+    def get_meta_data(self, request):
+        truncator = Truncator(strip_tags(self.content))
+        description = truncator.words(35)
+        image = ''
+
+        if self.hero_image:
+            image = request.build_absolute_uri(self.hero_image.url)
+
+        url = request.build_absolute_uri(self.get_absolute_url())
+
+        return {
+            'type': 'article',
+            'title': self.title,
+            'description': description,
+            'image': image,
+            'url': url,
+        }
 
     def __str__(self):
         return self.title

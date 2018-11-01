@@ -15,3 +15,8 @@ class BlogPost(DetailView):
     model = BlogPost
     queryset = BlogPost.objects.filter(published=True)
     context_object_name = 'blog_post'
+
+    def get_context_data(self, **kwargs):
+        context = super(BlogPost, self).get_context_data(**kwargs)
+        context['meta'] = self.get_object().get_meta_data(self.request)
+        return context

@@ -56,6 +56,7 @@ section.blog-post {
 
   h1 {
     color: @blogTitleColor;
+    font-size: 1.75rem;
     margin-top: 15px;
     margin-bottom: 8px;
   }
@@ -91,11 +92,49 @@ section.blog-post {
   }
 
   p.date {
-      font-size: 13px;
-      font-style: italic;
-      margin-top: 0;
-      color: @blogDateColor;
+    font-size: 13px;
+    font-style: italic;
+    margin-top: 0;
+    color: @blogDateColor;
+  }
+
+  div.share {
+    margin-top: 2rem;
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      align-items: center;
+      width: 100%;
+
+      &:before {
+        content: "Comparte ";
+        margin-right: 8px;
+        font-weight: bold;
+      }
+
+      li {
+        border: 1px solid @selectionBackgroundColor;
+        border-radius: 5px;
+        margin-right: 10px;
+        padding: 5px 8px 5px 8px;
+        a {
+          color: @secondaryColor;
+        }
+      }
     }
+  }
+
+  div.author {
+    img.photo {
+      border: 2px solid #fefefe;
+      border-radius: 50%;
+      box-shadow: 0 0 0 1px @selectionBackgroundColor;
+    }
+  }
 }
 
 

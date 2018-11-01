@@ -48,7 +48,7 @@
                 </h3>
               </a>
               {% if blog_post.published %}
-              <p class="date">Públicado en {{ blog_post.published_at|date:'F d, Y' }}</p>
+              <p class="date">Públicado en <time id="date" datetime="{{ blog_post.published_at|date:'Y-m-d' }}">{{ blog_post.published_at|date:'F d, Y' }}</time></p>
               {% endif %}
             </div>
           </div>
