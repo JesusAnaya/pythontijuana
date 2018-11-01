@@ -1,0 +1,9 @@
+# Custom robots.txt file.
+
+User-agent: *
+
+Disallow: /admin/
+Disallow: /static/
+Disallow: /media/
+
+Sitemap: https://pythontijuana.com/sitemap.xml

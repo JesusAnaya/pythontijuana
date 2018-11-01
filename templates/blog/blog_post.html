@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static sorl_thumbnail helper_tags disqus_tags %}
+
+{% block title %}{% block og_title %}{{ blog_post.title }}{% endblock %}{% endblock %}
+
+{% block meta_tags %}
+{% include "meta/meta.html" %}
+{% endblock %}
+
+{% block navigation %}
+{% include 'blog/blog_navbar.html' %}
+{% endblock %}
+
+{% block content %}
+<section class="blog-post">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <!-- Preview Image -->
+        {% if blog_post.hero_image %}
+        {% thumbnail blog_post.hero_image "900x350" crop="center" as image %}
+          <img class="hero-image img-fluid rounded" src="{{ image.url }}" alt="">
+        {% endthumbnail %}
+        {% endif %}
+
+        <!-- Title -->
+        <h1 class="mt-4">{{ blog_post.title }}</h1>
+
+        <!-- Date/Time -->
+        <p class="date">Públicado en <time id="date" datetime="{{ blog_post.published_at|date:'Y-m-d' }}">{{ blog_post.published_at|date:'F d, Y' }}</time></p>
+        <hr>
+        <!-- Post Content -->
+        {{ blog_post.content|safe }}
+
+        <div class="share">
+          <ul>
+            <li>
+              <a href="https://facebook.com/sharer.php?u={% full_uri blog_post.get_absolute_url %}" target="_blank">Facebook</a>
+            </li>
+            <li>
+              <a href="https://twitter.com/intent/tweet?url={% full_uri blog_post.get_absolute_url %}&amp;text={{ blog_post.title }}&amp;via=PythonTijuana" target="_blank">Twitter</a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/cws/share?url={% full_uri blog_post.get_absolute_url %}" target="_blank">Linkedin</a>
+            </li>
+          </ul>
+        </div>
+        <hr>
+
+        {% if blog_post.author %}
+        {% with blog_post.author as author %}
+        <!-- Post Author -->
+        <div class="media mt-4 author">
+          {% if author.profile.photo %}
+          {% thumbnail author.profile.photo "80x80" crop="center" as photo %}
+            <img class="photo d-flex mr-3 rounded-circle" src="{{ photo.url }}" alt="{{ author.get_full_name }}">
+          {% endthumbnail %}
+          {% endif %}
+          <div class="media-body">
+            <h5 class="mt-0 name">{{ author.get_full_name }}</h5>
+            <p class="bio">
+              {{ author.profile.bio|safe }}
+            </p>
+          </div>
+        </div>
+        <hr>
+        {% endwith %}
+        {% endif %}
+
+        {% set_disqus_identifier "post_" blog_post.pk|stringformat:"i" %}
+        {% set_disqus_title blog_post.title %}
+        {% disqus_show_comments %}
+        {% disqus_dev %}
+
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,19 +1,20 @@
 {% load static compress %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
   <head>
     <title>{% block title %}Grupo de usuarios de Python de Tijuana{% endblock %}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="{% block description %}{% endblock %}">
 
+    {% block meta_tags %}
+    <meta name="description" content="{% block description %}{% endblock %}">
     <meta property="og:site_name" content="Python Tijuana"/>
-    <meta property="og:type" content="website"/>
     <meta property="og:title" content="{% block og_title %}Grupo de usuarios de Python de Tijuana{% endblock %}"/>
     <meta property="og:description" content="{% block og_description %}{% endblock %}"/>
-
+    <meta property="og:type" content="website"/>
+    {% endblock %}
     <!-- Bootstrap core CSS -->
     <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
 
