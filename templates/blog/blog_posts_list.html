@@ -23,7 +23,6 @@
 <section class="blog-posts">
   <div class="container">
     <div class="row">
-
       <div class="col-lg-8 col-md-10 mx-auto">
         {% for blog_post in blog_posts_list %}
         <article class="post-preview">
@@ -34,7 +33,6 @@
                 {% thumbnail blog_post.hero_image "160x142" crop="center" as image %}
                   <img class="hero-image" src="{{ image.url }}">
                 {% endthumbnail %}
-
               </a>
             </div>
             {% endif %}
@@ -55,55 +53,7 @@
         </article>
         <hr/>
         {% endfor %}
-
-        <article class="post-preview">
-          <div class="row">
-
-            <div class="post-content col-md-12">
-              <a href="">
-                <h2 class="post-title">
-                  Science has not yet mastered prophecy
-                </h2>
-                <h3 class="post-subtitle">
-                  We predict too much for the next year and yet far too little for the next ten.
-                </h3>
-              </a>
-              <p class="post-meta">Posted by
-                <a href="#">Start Bootstrap</a>
-                on August 24, 2018
-              </p>
-            </div>
-          </div>
-        </article>
-        <hr/>
-
-        <article class="post-preview">
-          <div class="row">
-            <div class="hero-image col-3">
-              <a href="">
-                <img class="hero-image" src="http://placehold.it/160x142" alt="">
-              </a>
-            </div>
-            <div class="post-content col-md-9 col-s-12">
-              <a href="">
-                <h2 class="post-title">
-                  Science has not yet mastered prophecy
-                </h2>
-                <h3 class="post-subtitle">
-                  We predict too much for the next year and yet far too little for the next ten.
-                </h3>
-              </a>
-              <p class="post-meta">Posted by
-                <a href="#">Start Bootstrap</a>
-                on August 24, 2018
-              </p>
-            </div>
-          </div>
-        </article>
-        <hr/>
-
       </div>
-
     </div>
   </div>
 </section>
