@@ -23,4 +23,5 @@ urlpatterns = [
     path('', HomePage.as_view(), name='home'),
     path('blog/', include('blog.url')),
     path('admin/', admin.site.urls),
+    path('summernote/', include('django_summernote.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

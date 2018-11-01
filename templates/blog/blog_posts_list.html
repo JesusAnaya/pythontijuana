@@ -1,30 +1,10 @@
 {% extends 'base.html' %}
-{% load static home_tags %}
+{% load static sorl_thumbnail %}
 
 {% block title %}{% block og_title %}El Blog de Python Tijuana{% endblock %}{% endblock %}
 
-
 {% block navigation %}
-<!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-  <div class="container">
-    <a href="#page-top"><span class="logo"></span></a>
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-      Menu
-      <i class="fas fa-bars"></i>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav text-uppercase ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="/">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'blog' %}">Posts</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+{% include 'blog/blog_navbar.html' %}
 {% endblock %}
 
 {% block content %}
@@ -45,30 +25,36 @@
     <div class="row">
 
       <div class="col-lg-8 col-md-10 mx-auto">
+        {% for blog_post in blog_posts_list %}
         <article class="post-preview">
           <div class="row">
+            {% if blog_post.hero_image %}
             <div class="hero-image col-3">
-              <a href="">
-                <img class="hero-image" src="http://placehold.it/160x142" alt="">
+              <a href="{{ blog_post.get_absolute_url }}">
+                {% thumbnail blog_post.hero_image "160x142" crop="center" as image %}
+                  <img class="hero-image" src="{{ image.url }}">
+                {% endthumbnail %}
+
               </a>
             </div>
-            <div class="post-content col-md-9 col-s-12">
-              <a href="">
+            {% endif %}
+            <div class="post-content {% if blog_post.hero_image %} col-md-9 col-s-12 {% else %} col-md-12 {% endif %}">
+              <a href="{{ blog_post.get_absolute_url }}">
                 <h2 class="post-title">
-                  Science has not yet mastered prophecy
+                  {{ blog_post.title }}
                 </h2>
                 <h3 class="post-subtitle">
-                  We predict too much for the next year and yet far too little for the next ten.
+                  {{ blog_post.content|striptags|truncatewords:35 }}
                 </h3>
               </a>
-              <p class="post-meta">Posted by
-                <a href="#">Start Bootstrap</a>
-                on August 24, 2018
-              </p>
+              {% if blog_post.published %}
+              <p class="date">Públicado en {{ blog_post.published_at|date:'F d, Y' }}</p>
+              {% endif %}
             </div>
           </div>
         </article>
         <hr/>
+        {% endfor %}
 
         <article class="post-preview">
           <div class="row">

@@ -25,13 +25,16 @@ DJANGO_APPS = [
     'django.contrib.staticfiles',
 ]
 
-THIRD_PARTY_APPS = []
+THIRD_PARTY_APPS = [
+    'compressor',
+    'sorl.thumbnail',
+    'django_summernote',
+]
 
 LOCAL_APPS = [
     'core',
     'blog',
     'events',
-    'compressor',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -119,6 +122,9 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
 STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
+
+# Show summernote with Bootstrap4
+SUMMERNOTE_THEME = 'bs4'
 
 LOGGING = {
     'version': 1,

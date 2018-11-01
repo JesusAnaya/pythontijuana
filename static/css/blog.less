@@ -1,3 +1,4 @@
+@import "colors.less";
 
 article.post-preview {
   padding-top: 15px;
@@ -28,11 +29,11 @@ article.post-preview {
       }
     }
 
-    p.post-meta {
+    p.date {
       font-size: 13px;
       font-style: italic;
       margin-top: 0;
-      color: #868e96;
+      color: @blogDateColor;
     }
   }
 }
@@ -46,6 +47,59 @@ section.blog-posts {
   padding-bottom: 30px;
 }
 
+
+// blog post css
+section.blog-post {
+  color: @primaryColor;
+  padding-top: 130px;
+  padding-bottom: 40px;
+
+  h1 {
+    color: @blogTitleColor;
+    margin-top: 15px;
+    margin-bottom: 8px;
+  }
+  h2 {
+    font-size: 24px;
+    margin-top: 6px;
+    margin-bottom: 10px;
+  }
+  h3 {
+    font-size: 18px;
+    font-weight: 300;
+    margin: 0 0 10px;
+  }
+  img.hero-image {
+    margin-bottom: 5px;
+  }
+
+  pre {
+    white-space: pre-wrap;       /* css-3 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    padding: 5px;
+  }
+
+  div.author {
+    h5.name {
+      font-size: 16px;
+    }
+  }
+
+  p.date {
+      font-size: 13px;
+      font-style: italic;
+      margin-top: 0;
+      color: @blogDateColor;
+    }
+}
+
+
+// media queries
 @media only screen and (max-width: 1200px) {
 
 }

@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% load static sorl_thumbnail %}
+
+{% block title %}{% block og_title %}{{ blog_post.title }}{% endblock %}{% endblock %}
+
+{% block navigation %}
+{% include 'blog/blog_navbar.html' %}
+{% endblock %}
+
+{% block content %}
+<section class="blog-post">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <!-- Preview Image -->
+        {% if blog_post.hero_image %}
+        {% thumbnail blog_post.hero_image "900x350" crop="center" as image %}
+          <img class="hero-image img-fluid rounded" src="{{ image.url }}" alt="">
+        {% endthumbnail %}
+        {% endif %}
+
+        <!-- Title -->
+        <h1 class="mt-4">{{ blog_post.title }}</h1>
+
+        <!-- Date/Time -->
+        <p class="date">Públicado en {{ blog_post.published_at|date:'F d, Y' }}</p>
+        <hr>
+        <!-- Post Content -->
+        {{ blog_post.content|safe }}
+        <hr>
+
+        <!-- Post Author -->
+        <div class="media mt-4 author">
+          <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/80x80" alt="">
+          <div class="media-body">
+            <h5 class="mt-0 name">Commenter Name</h5>
+            <p class="description">
+              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+            </p>
+          </div>
+        </div>
+        <hr>
+
+        <!-- Comments Form -->
+        <div class="card my-4">
+          <h5 class="card-header">Leave a Comment:</h5>
+          <div class="card-body">
+            <form>
+              <div class="form-group">
+                <textarea class="form-control" rows="3"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Single Comment -->
+        <div class="media mb-4">
+          <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+          <div class="media-body">
+            <h5 class="mt-0">Commenter Name</h5>
+            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+          </div>
+        </div>
+
+        <!-- Comment with nested comments -->
+        <div class="media mb-4">
+          <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+          <div class="media-body">
+            <h5 class="mt-0">Commenter Name</h5>
+            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+
+            <div class="media mt-4">
+              <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+              <div class="media-body">
+                <h5 class="mt-0">Commenter Name</h5>
+                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+              </div>
+            </div>
+
+            <div class="media mt-4">
+              <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+              <div class="media-body">
+                <h5 class="mt-0">Commenter Name</h5>
+                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
