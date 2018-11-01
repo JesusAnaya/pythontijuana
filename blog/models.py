@@ -7,7 +7,7 @@ from django.db.models.signals import pre_save
 from django.dispatch import receiver
 from django.template.defaultfilters import slugify
 
-from sorl.thumbnail import ImageField
+from sorl.thumbnail import ImageField, get_thumbnail
 from django.urls import reverse
 
 
@@ -31,10 +31,13 @@ class BlogPost(models.Model):
         description = truncator.words(35)
         image = ''
 
-        if self.hero_image:
-            image = request.build_absolute_uri(self.hero_image.url)
+        full_domain = '{}://{}'.format(settings.META_SITE_PROTOCOL, settings.META_SITE_DOMAIN)
 
-        url = request.build_absolute_uri(self.get_absolute_url())
+        if self.hero_image:
+            thumbnail = get_thumbnail(self.hero_image, '900x350', crop='center')
+            image = '{}{}'.format(full_domain, thumbnail.url)
+
+        url = '{}{}'.format(full_domain, self.get_absolute_url())
 
         return {
             'type': 'article',
