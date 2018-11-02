@@ -13,11 +13,11 @@ from django.urls import reverse
 
 class BlogPost(models.Model):
     class Meta:
-        ordering = ['created_at']
+        ordering = ['-created_at']
 
     title = models.CharField(max_length=255)
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, related_name='blog_posts', blank=True, null=True)
-    slug = models.CharField(max_length=300)
+    slug = models.CharField(max_length=300, blank=True)
     published = models.BooleanField(blank=True, default=False)
     hero_image = ImageField(upload_to='blog/', blank=True, null=True)
     content = models.TextField(blank=True, null=True)

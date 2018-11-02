@@ -24,45 +24,6 @@ a:hover {
     background-size: @logoWidth @logoHeight;
 }
 
-#mainNav .navbar-nav .nav-item .nav-link {
-    font-size: 90%;
-    font-weight: 400;
-    padding: 0.75em 0;
-    letter-spacing: 1px;
-    color: @primaryColor;
-    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-}
-
-@media (min-width: 992px) {
-  #mainNav {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    -webkit-transition: padding-top 0.3s, padding-bottom 0.3s;
-    transition: padding-top 0.3s, padding-bottom 0.3s;
-    border: none;
-    background-color: #f8f9fa;
-    box-shadow: 0 2px 0 rgba(0,0,0,.1);
-  }
-  #mainNav .navbar-brand {
-    font-size: 1.75em;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
-  }
-  #mainNav .navbar-nav .nav-item .nav-link {
-    padding: 1.1em 1em !important;
-  }
-  #mainNav.navbar-shrink {
-    padding-top: 0;
-    padding-bottom: 0;
-    background-color: #f8f9fa;
-    opacity: 1;
-  }
-  #mainNav.navbar-shrink .navbar-brand {
-    font-size: 1.25em;
-    padding: 12px 0;
-  }
-}
-
 .countdown-timer-wrapper {
   border-radius: 5px;
   background-color: rgba(0, 0, 0, 0.6);
@@ -168,4 +129,14 @@ section .facebook-group img.fb-icon {
 
 span.comodo-ssl-icon {
   margin-left: 10px;
+}
+
+@media (max-width: 992px) {
+  .copyright, .comodo-ssl-icon {
+    display: none;
+  }
+
+  .facebook-group {
+    width: 90%;
+  }
 }
