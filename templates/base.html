@@ -34,6 +34,8 @@
     <link href="{% static 'css/blog.less' %}" rel="stylesheet" type="text/less">
     {% endcompress %}
 
+    {% block extra_css %}{% endblock %}
+
   </head>
 
   <body id="page-top">
@@ -105,5 +107,7 @@
         gtag('config', '{% google_analytics_id %}');
       </script>
     {% endif %}
+
+    {% block extra_js %}{% endblock %}
   </body>
 </html>
