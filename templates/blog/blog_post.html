@@ -24,7 +24,7 @@
         {% endif %}
 
         <!-- Title -->
-        <h1 class="mt-4">{{ blog_post.title }}</h1>
+        <h1 class="mt-4">{{ blog_post.title }}{% if not blog_post.published %} (Draft) {% endif %}</h1>
 
         <!-- Date/Time -->
         <p class="date">Públicado en <time id="date" datetime="{{ blog_post.published_at|date:'Y-m-d' }}">{{ blog_post.published_at|date:'F d, Y' }}</time></p>

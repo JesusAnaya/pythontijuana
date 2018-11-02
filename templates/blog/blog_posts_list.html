@@ -39,7 +39,7 @@
             <div class="post-content {% if blog_post.hero_image %} col-md-9 col-s-12 {% else %} col-md-12 {% endif %}">
               <a href="{{ blog_post.get_absolute_url }}">
                 <h2 class="post-title">
-                  {{ blog_post.title }}
+                  {{ blog_post.title }} {% if not blog_post.published %}(Draft){% endif %}
                 </h2>
                 <h3 class="post-subtitle">
                   {{ blog_post.content|striptags|truncatewords:35 }}
