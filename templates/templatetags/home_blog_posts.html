@@ -1,0 +1,31 @@
+{% load static sorl_thumbnail %}
+
+{% for blog_post in blog_posts_list %}
+<article class="post-preview">
+  <div class="row">
+    {% if blog_post.hero_image %}
+    <div class="hero-image col-3">
+      <a href="{{ blog_post.get_absolute_url }}">
+        {% thumbnail blog_post.hero_image "160x142" crop="center" as image %}
+          <img class="hero-image" src="{{ image.url }}">
+        {% endthumbnail %}
+      </a>
+    </div>
+    {% endif %}
+    <div class="post-content {% if blog_post.hero_image %} col-md-9 col-s-12 {% else %} col-md-12 {% endif %}">
+      <a href="{{ blog_post.get_absolute_url }}">
+        <h2 class="post-title">
+          {{ blog_post.title }} {% if not blog_post.published %}(Draft){% endif %}
+        </h2>
+        <h3 class="post-subtitle">
+          {{ blog_post.content|striptags|truncatewords:35 }}
+        </h3>
+      </a>
+      {% if blog_post.published %}
+      <p class="date">Públicado en <time id="date" datetime="{{ blog_post.published_at|date:'Y-m-d' }}">{{ blog_post.published_at|date:'F d, Y' }}</time></p>
+      {% endif %}
+    </div>
+  </div>
+</article>
+<hr/>
+{% endfor %}

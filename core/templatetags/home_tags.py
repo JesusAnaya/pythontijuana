@@ -1,6 +1,7 @@
 from django.utils import timezone
 from django import template
 from events.models import Event
+from blog.models import BlogPost
 
 register = template.Library()
 
@@ -12,4 +13,13 @@ def next_event():
 
     return {
         'next_event': next_event,
+    }
+
+
+@register.inclusion_tag('templatetags/home_blog_posts.html')
+def home_blog_posts():
+    blog_posts = BlogPost.objects.filter(published=True)[:3]
+
+    return {
+        'blog_posts_list': blog_posts,
     }
